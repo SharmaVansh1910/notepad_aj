@@ -131,7 +131,7 @@ void saveNotesToFile() {
 
 int main() {
     string password;
-    const string correctPassword = "dsa123";
+    const string correctPassword = "vansh1910";
     int attempts = 0;
 
     while (attempts < 3) {
