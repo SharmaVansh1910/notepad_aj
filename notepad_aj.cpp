@@ -2,7 +2,7 @@
 #include <map>
 #include <queue>
 #include <vector>
-#include <fstream>  // for file handling
+#include <fstream>
 using namespace std;
 
 class Note {
@@ -114,11 +114,12 @@ void deleteNote(string title) {
 }
 
 void saveNotesToFile() {
-    ofstream file("notes.txt");
-    if (!file) {
-        cout << "Error opening file for writing.\n";
+    ofstream file("notes.txt", ios::out);
+    if (!file.is_open()) {
+        cout << "Failed to open the file.\n";
         return;
     }
+
 
     for (int i = 0; i < noteList.size(); i++) {
         file << "Title: " << noteList[i].title << "\n";
